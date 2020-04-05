@@ -5,7 +5,7 @@
 A member of the group starts a pool using a command /pool and followed by the “pool Name”. 
 For instance /pool Dairy from the farm
 
-*Pool Details*
+**Pool Details**
 The bot asks to provide more details, for instance:
 Tell us more, for instance “answer today by 13.00, collect on Wednesday 10.00, our office”
 The channel member/pool moderator adds details, in text
