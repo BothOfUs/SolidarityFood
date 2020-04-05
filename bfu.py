@@ -1,4 +1,8 @@
 import os, slackclient
+import pandas as pd
+from pandas import ExcelWriter
+from pandas import ExcelFile
+
 
 SLACK_BOT_TOKEN = os.environ.get('SLACK_BOT_TOKEN')
 SLACK_USER_TOKEN = os.environ.get('SLACK_USER_TOKEN')
@@ -23,7 +27,7 @@ print(is_ok)
 
 #SolidarityFood_client.api_call("chat.postMessage", channel="food_test", text="Dayo is the best")
 #SolidarityFood_client.api_call("chat.postMessage", channel="general", text=" Thank you!")
-history = fsc.api_call("groups.history", channel="GARQ9DUKF")
+history = fsc.api_call("groups.history", channel="food_test")
 for message in history['messages']:
     print(message)
     if '/pool' in message:
@@ -37,3 +41,8 @@ for message in history['messages']:
     pooldes=message
     SolidarityFood_client.api_call("chat.postMessage", channel="food_test", text=("Pool",poolname,"has been created - ",pooldes))
     SolidarityFood_client.api_call("chat.postMessage", channel="food_test", text=(("Your pool is almost ready: Go to your specific pool page on, ",poolurl,"to add a catalogue and see the pool order recap."))
+def excel():
+    df = pd.read_excel('Book1.xlsx')    
+    print(df)
+    print(df['Name'])
+    print(df['Price'])
